@@ -1,0 +1,52 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<BorderPane fx:controller="sample.Controller"
+            xmlns:fx="http://javafx.com/fxml">
+
+
+    <top>
+        <HBox spacing="5">
+            <Spinner fx:id="userNum1" initialValue="5" min="0" max="9"/>
+            <Spinner fx:id="userNum2" initialValue="5" min="0" max="9"/>
+            <Spinner fx:id="userNum3" initialValue="5" min="0" max="9"/>
+            <Spinner fx:id="userNum4" initialValue="5" min="0" max="9"/>
+            <Button text="GO" minWidth="100" onAction="#doTurn"/>
+        </HBox>
+    </top>
+
+    <center>
+        <TableView fx:id="turnList">
+            <columns>
+                <TableColumn text="#">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="turnNr"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Guess">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="userGuess"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Bulls">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="bulls"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Cows">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="cows"/>
+                    </cellValueFactory>
+                </TableColumn>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>
